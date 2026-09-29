@@ -1,0 +1,134 @@
+{
+  "model": "gradient_boosting",
+  "test_metrics": {
+    "MAE": 109.2669,
+    "RMSE": 532.2715,
+    "MAPE_%": 5.557,
+    "R2": 0.8675
+  },
+  "date_feature_importance": {
+    "date_features": [
+      [
+        "num__month_cos",
+        0.001162929851595123
+      ],
+      [
+        "num__month_sin",
+        0.0008800553454008372
+      ],
+      [
+        "cat__month_6",
+        0.000479881384251077
+      ],
+      [
+        "cat__month_2",
+        0.000275394337429606
+      ],
+      [
+        "num__day_of_week_sin",
+        0.00023499512199971344
+      ],
+      [
+        "num__day_of_week_cos",
+        0.0001991307877269554
+      ],
+      [
+        "cat__month_10",
+        0.00018564483758322102
+      ],
+      [
+        "cat__month_4",
+        0.0001571024866473414
+      ],
+      [
+        "cat__month_1",
+        8.738590814288864e-05
+      ],
+      [
+        "cat__day_of_week_Wednesday",
+        8.179471618358563e-05
+      ],
+      [
+        "cat__month_3",
+        6.659801628110881e-05
+      ],
+      [
+        "num__is_weekend",
+        5.520295727128334e-05
+      ],
+      [
+        "cat__day_of_week_Monday",
+        3.6162146123692584e-05
+      ],
+      [
+        "num__is_month_end",
+        1.5615703081497934e-05
+      ],
+      [
+        "cat__month_8",
+        1.4068830480766367e-05
+      ],
+      [
+        "cat__day_of_week_Saturday",
+        9.297004036350526e-06
+      ],
+      [
+        "cat__month_9",
+        4.626239842085177e-06
+      ],
+      [
+        "num__is_month_start",
+        0.0
+      ],
+      [
+        "num__is_peak_season",
+        0.0
+      ],
+      [
+        "cat__day_of_week_Friday",
+        0.0
+      ],
+      [
+        "cat__day_of_week_Sunday",
+        0.0
+      ],
+      [
+        "cat__day_of_week_Thursday",
+        0.0
+      ],
+      [
+        "cat__day_of_week_Tuesday",
+        0.0
+      ],
+      [
+        "cat__month_5",
+        0.0
+      ],
+      [
+        "cat__month_7",
+        0.0
+      ]
+    ],
+    "total_importance": 0.003945885674077133,
+    "top_date_feature": [
+      "num__month_cos",
+      0.001162929851595123
+    ]
+  },
+  "date_ablation": {
+    "with_date_features": {
+      "MAE": 113.7526,
+      "RMSE": 543.5819,
+      "MAPE_%": 5.423,
+      "R2": 0.8618
+    },
+    "without_date_features": {
+      "MAE": 119.7363,
+      "RMSE": 544.5473,
+      "MAPE_%": 5.692,
+      "R2": 0.8613
+    },
+    "mae_improvement_from_date": 5.9837,
+    "r2_improvement_from_date": 0.0005
+  }
+}
