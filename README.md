@@ -51,16 +51,16 @@ pip install -r requirements.txt
         Produces `freight_rate_model.joblib` (the fitted pipeline) and `freight_rate_model.metrics.json` (test metrics, feature importances, and the date-feature ablation results).
 
 
-### 2. Predict on new data (reduced output: `id, predicted_rate`)
+    c. Predict on new data (reduced output: `id, predicted_rate`)
 
-```bash
-python freight_pipeline.py predict \
-    --model freight_rate_model.joblib \
-    --data validation.csv \
-    --output validation_predictions.csv
-```
+        ```bash
+        python freight_pipeline.py predict \
+            --model freight_rate_model.joblib \
+            --data validation.csv \
+            --output validation_predictions.csv
+        ```
 
-Use `--id-column` if your identifier column isn't named `load_id`.
+        Use `--id-column` if your identifier column isn't named `load_id`.
 
 ### 3. Fill a fixed-format template in place (all original columns preserved)
 
