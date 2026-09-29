@@ -7,7 +7,7 @@ Predicts freight `posted_rate` for the given dataset — training, scoring new d
 
 
 
-### Install dependencies
+## 1. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -18,24 +18,24 @@ pip install -r requirements.txt
 ```
 
 
-### Files in this project
+ Files in this project
 
-## 1. Input data schema
+     a. Input data schema
 
-Training/validation data is expected to have these columns:
+        Training/validation data is expected to have these columns:
 
-```
-load_id, pickup, delivery, pickup_lat, pickup_lon, delivery_lat,
-delivery_lon, distance, equipment, weight, date, market_index,
-quote_signal, posted_rate
-```
+        ```
+        load_id, pickup, delivery, pickup_lat, pickup_lon, delivery_lat,
+        delivery_lon, distance, equipment, weight, date, market_index,
+        quote_signal, posted_rate
+        ```
 
-- `posted_rate` is the target — required for **training**, absent for **prediction**.
-- If your column names differ, pass `--column-map '{"raw_name": "expected_name"}'` (any subcommand) to rename before processing.
+        - `posted_rate` is the target — required for **training**, absent for **prediction**.
+        - If your column names differ, pass `--column-map '{"raw_name": "expected_name"}'` (any subcommand) to rename before processing.
 
 ---
 
-## 2. Run instructions
+2. Run instructions
 
 The CLI has three subcommands: `train`, `predict`, `fill-template`.
 
@@ -51,7 +51,7 @@ python freight_pipeline.py train \
 Produces `freight_rate_model.joblib` (the fitted pipeline) and `freight_rate_model.metrics.json` (test metrics, feature importances, and the date-feature ablation results).
 
 
-### Predict on new data (reduced output: `id, predicted_rate`)
+### 2. Predict on new data (reduced output: `id, predicted_rate`)
 
 ```bash
 python freight_pipeline.py predict \
@@ -62,7 +62,7 @@ python freight_pipeline.py predict \
 
 Use `--id-column` if your identifier column isn't named `load_id`.
 
-### Fill a fixed-format template in place (all original columns preserved)
+### 3. Fill a fixed-format template in place (all original columns preserved)
 
 ```bash
 python freight_pipeline.py fill-template \
@@ -75,7 +75,7 @@ Use this instead of `predict` whenever a downstream consumer (a scorer, a chart,
 
 
 
-## 5. Quick end-to-end example
+## 4. Quick end-to-end example
 
 ```bash
 pip install -r requirements.txt
