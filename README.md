@@ -35,20 +35,20 @@ pip install -r requirements.txt
 
 ---
 
-2. Run instructions
+    b. Run instructions
 
-The CLI has three subcommands: `train`, `predict`, `fill-template`.
+        The CLI has three subcommands: `train`, `predict`, `fill-template`.
 
-### Train a model
+        Train a model
 
-```bash
-python freight_pipeline.py train \
-    --data train-test.csv \
-    --target posted_rate \
-    --output freight_rate_model.joblib
-```
+        ```bash
+        python freight_pipeline.py train \
+            --data train-test.csv \
+            --target posted_rate \
+            --output freight_rate_model.joblib
+        ```
 
-Produces `freight_rate_model.joblib` (the fitted pipeline) and `freight_rate_model.metrics.json` (test metrics, feature importances, and the date-feature ablation results).
+        Produces `freight_rate_model.joblib` (the fitted pipeline) and `freight_rate_model.metrics.json` (test metrics, feature importances, and the date-feature ablation results).
 
 
 ### 2. Predict on new data (reduced output: `id, predicted_rate`)
